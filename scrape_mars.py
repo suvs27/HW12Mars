@@ -1,7 +1,7 @@
 from splinter import Browser
 from bs4 import BeautifulSoup as bs
 import requests
-#import pandas as pd
+import pandas as pd
 from splinter.exceptions import ElementDoesNotExist
 import time
 
@@ -83,14 +83,14 @@ def scrape_info():
     #Mars Facts
     # Returns (mars_facts_table)
 
-    #facts = pd.read_html("https://space-facts.com/mars/")
+    facts = pd.read_html("https://space-facts.com/mars/")
 
-    #mars_facts_df = facts[1]
-    #mars_facts_df.columns = ['Description', 'Value']
-    #mars_facts_df.set_index("Description", inplace=True)
-    #mars_facts_df.head()
-    #mars_facts_table = mars_facts_df.to_html()
-    #mars_facts_table = mars_facts_table.replace('\n', '')
+    mars_facts_df = facts[1]
+    mars_facts_df.columns = ['Description', 'Value']
+    mars_facts_df.set_index("Description", inplace=True)
+    mars_facts_df.head()
+    mars_facts_table = mars_facts_df.to_html()
+    mars_facts_table = mars_facts_table.replace('\n', '')
 
     # Mars Hemispheres
     # Returns hemisphere_image_urls
@@ -143,7 +143,7 @@ def scrape_info():
                 "description2": news_p2,
                 "JPL_link": featured_image_url,
                 "weather_tweet": mars_weather,
-                 #{"facts_table": mars_facts_table},
+                "facts_table": mars_facts_table,
                 "title": cerberus_title, 
                 "img_url": cerberus_link,
                 "title": schiaparelli_title, 
@@ -162,5 +162,6 @@ def scrape_info():
     return marsdata
 
 
-#scrape_info()
+#a = scrape_info()
+#print(a)
 

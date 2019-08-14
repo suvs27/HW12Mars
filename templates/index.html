@@ -9,50 +9,114 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
+<style>
+.card {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+}
+</style>
+
+
 <body>
-  
-    <div class="container">
 
-      <div class="row">
-        <div class="col">
-            <div class="jumbotron text-center">
-                <h1>Mission to Mars</h1>
-          
-                <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
-              </div>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="jumbotron text-center">
+          <h1>Mission to Mars</h1>
+
+          <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
         </div>
       </div>
-
-      <div class="row">
-        <div class="col">
-          <h1 class="text-left">Latest Mars News</h1>
-          <h2 class="text-left">{{mars.news_title0}}</h2>
-          <h3 class="text-left">{{mars.description0}}</h3>
-        </div>
-      </div>
-
-
-      <div class="row">
-          <div class="col-md-6">
-              <h1>Featured Mars Image</h1>
-              <img src={{mars.JPL_link}} alt="Featured Mars Image" style="width:500px;height:500px;">
-          </div>
-          <div class="col-md-6">
-              <h2>Current Weather on Mars</h2>
-              <br> {{mars.weather_tweet}} <br>
-              <h2>Mars Facts</h2>
-              <br> {{mars.facts_table|safe}}
-          </div>
-        </div>
-
-
-     
-  
-  
     </div>
-   
 
-  </body> 
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="text-left">Latest Mars News</h1>
+        <h2 class="text-left">{{mars.news_title0}}</h2>
+        <h3 class="text-left">{{mars.description0}}</h3>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-6 col-md-8 col-sm-12">
+        <h1>Featured Mars Image</h1>
+        <img src={{mars.JPL_link}} alt="Featured Mars Image" style="width:500px;height:500px;">
+      </div>
+      <div class="col-lg-6 col-md-4 col-sm-12">
+        <h2>Current Weather on Mars</h2>
+        <br> {{mars.weather_tweet}} <br>
+        <h2>Mars Facts</h2>
+        <br> {{mars.facts_table|safe}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="text-center">Mars Hemispheres</h1>
+      </div>
+    </div>
+
+    <div class="row text-center">
+
+
+
+
+
+      <div class="col-md-6">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src={{mars.img_url1}} alt="Card image cap" style="width:250px;height:250px;">
+          <div class="card-body">
+            <p>{{mars.title1}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src={{mars.img_url3}} alt="Card image cap" style="width:250px;height:250px;">
+          <div class="card-body">
+            <p class="card-text">{{mars.title3}}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <br>
+
+    <div class="row text-center">
+      <div class="col-md-6">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src={{mars.img_url2}} alt="Card image cap" style="width:250px;height:250px;">
+          <div class="card-body">
+            <p class="card-text">{{mars.title2}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src={{mars.img_url4}} alt="Card image cap" style="width:250px;height:250px;">
+          <div class="card-body">
+            <p>{{mars.title4}}</p>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+
+
+
+  </div>
+
+
+</body>
 
 
 </html>

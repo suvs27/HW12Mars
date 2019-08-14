@@ -111,26 +111,26 @@ def scrape_info():
     # Get Cerberus Information
     browser.click_link_by_partial_text('Cerberus Hemisphere Enhanced')
     link1 = (browser.find_link_by_partial_text('Original'))
-    cerberus_link = (link1[0]["href"])
+    cerberus_link = (link1[0]["href"]) + "/full.jpg"
     browser.back()
 
     # Get Schiaparelli Information
     browser.click_link_by_partial_text('Schiaparelli Hemisphere Enhanced')
     link2 = (browser.find_link_by_partial_text('Original'))
-    schiaparelli_link = (link2[0]["href"])
+    schiaparelli_link = (link2[0]["href"]) + "/full.jpg"
 
     browser.back()
 
     # Get Syrtis Major Information
     browser.click_link_by_partial_text('Syrtis Major Hemisphere Enhanced')
     link3 = (browser.find_link_by_partial_text('Original'))
-    syrtis_link = (link3[0]["href"])
+    syrtis_link = (link3[0]["href"]) + "/full.jpg"
     browser.back()
 
     # Get Valles Major Information
     browser.click_link_by_partial_text('Valles Marineris Hemisphere Enhanced')
     link4 = (browser.find_link_by_partial_text('Original'))
-    valles_link = (link4[0]["href"])
+    valles_link = (link4[0]["href"]) + "/full.jpg"
     browser.back()
     
 
@@ -144,14 +144,14 @@ def scrape_info():
                 "JPL_link": featured_image_url,
                 "weather_tweet": mars_weather,
                 "facts_table": mars_facts_table,
-                "title": cerberus_title, 
-                "img_url": cerberus_link,
-                "title": schiaparelli_title, 
-                "img_url": schiaparelli_link,
-                "title": syrtis_title, 
-                "img_url": syrtis_link,
-                "title": valles_title, 
-                "img_url": valles_link}
+                "title1": cerberus_title, 
+                "img_url1": cerberus_link,
+                "title2": schiaparelli_title, 
+                "img_url2": schiaparelli_link,
+                "title3": syrtis_title, 
+                "img_url3": syrtis_link,
+                "title4": valles_title, 
+                "img_url4": valles_link}
     
 
     # Close the browser after scraping
